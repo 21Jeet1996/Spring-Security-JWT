@@ -12,7 +12,7 @@ import jakarta.persistence.OneToOne;
 @NoArgsConstructor
 @AllArgsConstructor*/
 @Entity
-public class OrderEntity {
+public class Order {
 
 	@Id
 	private String orderId;
@@ -29,12 +29,12 @@ public class OrderEntity {
 	@JoinColumn(name = "adress_Id", referencedColumnName = "adressId")
 	public Address address;
 
-	public OrderEntity() {
+	public Order() {
 		/// super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderEntity(String orderId, String productName, String productQuntity, String productType,
+	public Order(String orderId, String productName, String productQuntity, String productType,
 			double productPrice, Address address) {
 		super();
 		this.orderId = orderId;

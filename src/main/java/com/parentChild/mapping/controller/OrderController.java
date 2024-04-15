@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.parentChild.mapping.entity.Address;
-import com.parentChild.mapping.entity.OrderEntity;
+import com.parentChild.mapping.entity.Order;
 import com.parentChild.mapping.service.AddressService;
 import com.parentChild.mapping.service.OrderService;
 
@@ -27,9 +27,9 @@ public class OrderController {
 	private AddressService address;
 
 	@GetMapping("/order/{id}")
-	public ResponseEntity<OrderEntity> getOrder(@PathVariable String id) {
+	public ResponseEntity<Order> getOrder(@PathVariable String id) {
 
-		OrderEntity order = orderService.getOrderById(id);
+		Order order = orderService.getOrderById(id);
 		return ResponseEntity.accepted().body(order);
 
 	}
@@ -42,9 +42,9 @@ public class OrderController {
 	}
 
 	@PostMapping("/order")
-	public ResponseEntity<OrderEntity> saveOrder(@Valid @RequestBody OrderEntity order) {
+	public ResponseEntity<Order> saveOrder(@Valid @RequestBody Order order) {
 
-		OrderEntity saveOrder = orderService.saveOrder(order);
+		Order saveOrder = orderService.saveOrder(order);
 
 		// HttpHeaders header = new HttpHeaders();
 
@@ -57,7 +57,7 @@ public class OrderController {
 
 	}
 
-	private ResponseEntity<OrderEntity> ResponseEntity(OrderEntity saveOrder, HttpStatus created) {
+	private ResponseEntity<Order> ResponseEntity(Order saveOrder, HttpStatus created) {
 		// TODO Auto-generated method stub
 		return null;
 	}

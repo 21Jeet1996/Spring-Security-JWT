@@ -35,8 +35,8 @@ public class Address {
 	// @OneToOne
 	// @PrimaryKeyJoinColumn
 
-	@OneToOne(targetEntity = OrderEntity.class)
-	private OrderEntity orderEntity;
+	@OneToOne(targetEntity = Order.class)
+	private Order orderEntity;
 
 	public Address() {
 		// super();
@@ -44,7 +44,7 @@ public class Address {
 	}
 
 	public Address(String adressId, String addressLine1, String addressLine2, String city, String state, String pin,
-			OrderEntity orderEntity) {
+			Order orderEntity) {
 		super();
 		this.adressId = adressId;
 		this.addressLine1 = addressLine1;
@@ -103,11 +103,11 @@ public class Address {
 		this.pin = pin;
 	}
 
-	public OrderEntity getOrderEntity() {
+	public Order getOrderEntity() {
 		return orderEntity;
 	}
 
-	public void setOrderEntity(OrderEntity orderEntity) {
+	public void setOrderEntity(Order orderEntity) {
 		this.orderEntity = orderEntity;
 	}
 
