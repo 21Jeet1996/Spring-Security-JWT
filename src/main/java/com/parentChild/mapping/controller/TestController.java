@@ -19,6 +19,7 @@ public class TestController {
 	@GetMapping("user")
 	public String getUser() {
 
+		System.out.println("heloo");
 		return userService.getUser().toString();
 	}
 
