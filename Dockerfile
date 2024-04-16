@@ -1,4 +1,4 @@
-FROM eclips-temurin:17-jdk-alpine
+FROM eclips-temurin:21-jdk-alpine
 WORKDIR /app
 COPY target/entity-mapping.jar entity-mapping.jar
 EXPOSE 8085
